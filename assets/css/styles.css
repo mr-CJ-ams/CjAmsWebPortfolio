@@ -109,7 +109,6 @@ img {
   transform: color .3s;
 }
 
-
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
   --title-color: hsl(207, 4%, 95%);
@@ -547,7 +546,6 @@ body.dark-theme {
 }
 
 
-
 /*=============== SERVICES ===============*/
 .services__container{
   row-gap: 2.5rem;
@@ -572,6 +570,8 @@ body.dark-theme {
   margin-bottom: .75rem;
   transition: .8s;
 }
+
+
 
 .services__title{
   font-size: var(--h2-font-size);
@@ -1296,7 +1296,7 @@ body.dark-theme {
     padding: 3.5rem 1.5rem;
   }
   .services__card i{
-    font-size: 2.5rem;
+    font-size: 1.7rem;
   }
   .services__border{
     width: 285px;
@@ -1481,12 +1481,12 @@ button::after{
   height: 100%;
   z-index: -1;
   border-radius: 4px;
-  background-color: hsl(218deg 92% 57%);
+  /* background-color: hsl(218deg 92% 57%); */
   transform: translateZ(-5px);
 }
 
 button:before{
-  background-color: hsl(218deg 92% 57%);
+  /* background-color: hsl(218deg 92% 57%); */
   transform: translateZ(-10px);
 }
 
