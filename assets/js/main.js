@@ -62,6 +62,12 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
 
 
 /*=============== EMAIL JS ===============*/
+// Wait for EmailJS to be loaded
+window.addEventListener('load', function() {
+    // Initialize EmailJS
+    emailjs.init("KB6Pdho395xlZH2ZD");
+});
+
 const contactForm = document.getElementById("contact-form"),
       contactName = document.getElementById("contact-name"),
       contactEmail = document.getElementById("contact-email"),
@@ -70,6 +76,7 @@ const contactForm = document.getElementById("contact-form"),
 
 const sendEmail = (e) => {
     e.preventDefault()
+    
     // Check if the field has value 
     if(contactName.value === '' || contactEmail.value === '' || contactProject.value === ''){
       // Add and remove color
@@ -77,30 +84,52 @@ const sendEmail = (e) => {
       contactMessage.classList.add('color-red')
 
       // Show message
-      contactMessage.textContent = 'Write all the input fields ✍️'
-    }else{
-      // serviceID - templateID - #form - publicKey
-      emailjs.sendForm('service_1qmxjiw','template_xvm5cx9','#contact-form','0ePJXiTMAgyfL72E-')
-        .then(() =>{
-            // Show message and add color
-            contactMessage.classList.add('color-blue')
-            contactMessage.textContent = 'Message sent ✅'
+      contactMessage.textContent = 'Please fill in all fields ✍️'
+    } else {
+      // Show loading state
+      contactMessage.textContent = 'Sending message...'
+      contactMessage.classList.remove('color-red')
+      contactMessage.classList.add('color-blue')
 
-            //remove message in five seconds
-            setTimeout(() =>{
+      // Prepare the template parameters
+      const templateParams = {
+          user_name: contactName.value,
+          user_email: contactEmail.value,
+          user_project: contactProject.value,
+          reply_to: contactEmail.value
+      };
+
+      // Send the email
+      emailjs.send('service_gyqsg6c', 'template_8t5u5jd', templateParams)
+        .then(() => {
+            // Show success message
+            contactMessage.classList.add('color-blue')
+            contactMessage.textContent = 'Message sent successfully ✅'
+
+            // Clear the form
+            contactName.value = ''
+            contactEmail.value = ''
+            contactProject.value = ''
+
+            // Remove message after five seconds
+            setTimeout(() => {
                 contactMessage.textContent = ''
             }, 5000)
-        }, (error) => {
-            alert('OOPS! Something went wrong...', error)
         })
-
-      // To clear the input fields
-      contactName.value = ''
-      contactEmail.value = ''
-      contactProject.value = ''
+        .catch((error) => {
+            // Show error message
+            contactMessage.classList.remove('color-blue')
+            contactMessage.classList.add('color-red')
+            contactMessage.textContent = 'Failed to send message. Please try again later.'
+            console.error('EmailJS error:', error)
+        });
     }
 }
-contactForm.addEventListener('submit', sendEmail)
+
+// Add event listener to the form
+if(contactForm) {
+    contactForm.addEventListener('submit', sendEmail)
+}
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
