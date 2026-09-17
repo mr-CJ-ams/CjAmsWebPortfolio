@@ -611,11 +611,15 @@ body.dark-theme {
 
 .projects__content{
   display: grid;
+  grid-template-rows: 180px minmax(0, 1fr);
   justify-content: center;
+  min-height: 365px;
 }
 
 .projects__img{
   width: 250px;
+  height: 180px;
+  object-fit: contain;
   border-radius: .75rem;
   margin-bottom: 1.25rem;
 }
