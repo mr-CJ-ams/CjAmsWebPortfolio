@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toxic Comment Classification study by Carlojead E. Amaquin, using a bidirectional LSTM to label six types of toxic language.">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/feature-gallery.css">
+    <title>Toxic Comment Classification | Carlojead</title>
+</head>
+<body>
+    <main class="gallery-page">
+        <header class="gallery-header">
+            <a class="back-link" href="index.html#projects">
+                <i class="ri-arrow-left-line" aria-hidden="true"></i>
+                Back to portfolio
+            </a>
+            <p class="eyebrow">Neural networks</p>
+            <h1>Toxic Comment Classification</h1>
+            <p class="intro">by Carlojead E. Amaquin. A deep learning study that classifies comments across six toxicity categories.</p>
+        </header>
+
+        <section class="project-details" aria-labelledby="background-title">
+            <div class="details-intro">
+                <p class="eyebrow">01 / Background of the study</p>
+                <h2 id="background-title">Why toxic comments need classification</h2>
+                <div class="results-grid">
+                    <figure class="detail-figure">
+                        <img src="assets/img/img/image.png" alt="Illustration of a person typing an angry message at a computer">
+                    </figure>
+                    <figure class="detail-figure">
+                        <img src="assets/img/img/image-1.png" alt="Illustration of a person looking distressed while surrounded by messages">
+                    </figure>
+                </div>
+                <p>The proliferation of online platforms has facilitated global communication but has also led to a surge in toxic comments—remarks that are rude, disrespectful, or unreasonable, often causing individuals to withdraw from discussions. Such comments can have detrimental effects on mental health, community engagement, and the overall quality of discourse.</p>
+                <ul class="study-list">
+                    <li>Research has demonstrated the use of various machine learning techniques for classifying toxic comments on social media platforms, showcasing their potential in identifying harmful content effectively (Park et al., 2018).</li>
+                    <li>Another study highlights the application of deep learning algorithms for multilabel toxic comment classification, emphasizing the ability of these models to detect different types of toxicity with high accuracy (Chakrabarty et al., 2022).</li>
+                    <li>Implementing such classifiers can significantly benefit both society and industry by promoting healthier online interactions, enhancing user experiences, and maintaining brand integrity.</li>
+                </ul>
+                <p><strong>References</strong></p>
+                <ul class="citation-list">
+                    <li>Park, J., Shin, J., &amp; Seo, J. (2018). Classifying toxic comments on social media using machine learning techniques. arXiv preprint arXiv:1810.01750. <a href="https://arxiv.org/abs/1810.01750" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1810.01750</a></li>
+                    <li>Chakrabarty, T., Molla, M. N., &amp; Dutta, A. (2022). Deep learning approaches for multilabel toxic comment classification. Scientific Reports, 12(1), 10245. <a href="https://www.nature.com/articles/s41598-022-22523-3" target="_blank" rel="noopener noreferrer">https://www.nature.com/articles/s41598-022-22523-3</a></li>
+                </ul>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">02 / Main objective</p>
+                    <h2>Classify comments across six toxicity labels</h2>
+                </div>
+                <p>The main objective of this program is to classify text comments as toxic or non-toxic based on six different categories:</p>
+                <ul class="study-list">
+                    <li>toxic</li>
+                    <li>severe_toxic</li>
+                    <li>obscene</li>
+                    <li>threat</li>
+                    <li>insult</li>
+                    <li>identity_hate</li>
+                </ul>
+                <figure class="detail-figure detail-figure--wide">
+                    <img src="assets/img/img/image-2.png" alt="Illustration of the six toxicity categories: toxic, severe toxic, obscene, threat, insult, and identity hate">
+                </figure>
+                <p><strong>The specific objectives of this program include:</strong></p>
+                <ul class="study-list">
+                    <li>To utilize deep learning techniques, particularly recurrent neural networks, for toxicity classification in text.</li>
+                    <li>Evaluating the performance of the trained model using metrics like precision, recall, and accuracy.</li>
+                    <li>Creating a user interface using Gradio to allow users to interact with the model.</li>
+                </ul>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">03 / Techniques</p>
+                    <h2>NLP preprocessing and a bidirectional LSTM</h2>
+                </div>
+                <div class="results-grid">
+                    <figure class="detail-figure">
+                        <img src="assets/img/img/image-3.png" alt="Diagram showing a sentence split into tokens">
+                    </figure>
+                    <figure class="detail-figure">
+                        <img src="assets/img/img/image-4.png" alt="Diagram of preprocessing steps: tokenize, lemmatize, remove stopwords, then vectorize">
+                    </figure>
+                </div>
+                <p>The study employs a combination of Natural Language Processing (NLP) and deep learning techniques to achieve its objective. NLP is utilized for preprocessing the text data, which involves tasks such as tokenization and creating numerical representations of words through text vectorization. This numerical data is then fed into a deep learning model, specifically a Bidirectional Long Short-Term Memory (LSTM) network, for classification.</p>
+                <figure class="detail-figure detail-figure--wide">
+                    <img src="assets/img/img/image-5.png" alt="Bidirectional LSTM diagram with forward and backward layers reading a word sequence">
+                </figure>
+                <p>The bidirectional nature of the LSTM allows the model to capture contextual information from both preceding and succeeding words, enhancing its understanding of the text's meaning. Supervised learning is employed to train the model using labeled data, where each comment is associated with a toxicity classification.</p>
+                <p>Finally, the model's performance is evaluated using metrics like precision, recall, and accuracy to assess its effectiveness in identifying and categorizing toxic language.</p>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">04 / Data collection</p>
+                    <h2>Jigsaw Toxic Comment Classification Challenge</h2>
+                </div>
+                <figure class="detail-figure detail-figure--wide">
+                    <img src="assets/img/img/image-6.png" alt="Kaggle page for the Jigsaw Toxic Comment Classification Challenge dataset">
+                </figure>
+                <p>The program uses the "Jigsaw Toxic Comment Classification Challenge" dataset from Kaggle. This dataset contains a large number of comments labeled with the six toxicity categories. The dataset contains approximately 159,000 comments from Wikipedia talk pages that have been labeled by human annotators as toxic or non-toxic.</p>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">05 / Finding the optimal model</p>
+                    <h2>Sequential bidirectional LSTM</h2>
+                </div>
+                <p>The researchers developed a Bidirectional Long Short-Term Memory (LSTM) architecture, implemented as a sequential model with an embedding layer, a bidirectional LSTM layer, and dense layers.</p>
+                <figure class="detail-figure detail-figure--wide">
+                    <img src="assets/img/img/image-7.png" alt="Model diagram from an embedding layer through a bidirectional LSTM and dense layers to six toxicity outputs">
+                </figure>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">06 / Data preprocessing and loading</p>
+                    <h2>Text vectorization and the Jigsaw dataset</h2>
+                </div>
+                <ul class="study-list">
+                    <li>Text data was then preprocessed using TextVectorization for numerical representation and split into training, validation, and test datasets via the tf.data API to facilitate accurate toxicity classification.</li>
+                    <li>In loading the data, the study utilized the Jigsaw Toxic Comment Classification Challenge dataset for training and evaluation purposes.</li>
+                </ul>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">07 / Test-train split</p>
+                    <h2>70% train, 20% validation, 10% test</h2>
+                </div>
+                <figure class="detail-figure detail-figure--wide">
+                    <img src="assets/img/img/image-8.png" alt="Code that splits the dataset into 70 percent training, 20 percent validation, and 10 percent test">
+                </figure>
+                <p>The dataset was split into three subsets to ensure proper training, validation, and testing of the model. Specifically:</p>
+                <ul class="study-list">
+                    <li>70% of the dataset was used for training the model.</li>
+                    <li>20% of the dataset was allocated for validation to fine-tune the model and prevent overfitting.</li>
+                    <li>10% of the dataset was reserved for testing to evaluate the model's performance on unseen data.</li>
+                </ul>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">08 / Building the model</p>
+                    <h2>Seven layers from embeddings to probabilities</h2>
+                </div>
+                <p>The model architecture consists of seven layers: an embedding layer, a bidirectional LSTM layer, three dense layers for feature extraction, and a final dense layer for outputting toxicity probabilities.</p>
+                <p>Breakdown:</p>
+                <ul class="study-list">
+                    <li><strong>Embedding layer:</strong> Converts words into numerical vectors.</li>
+                    <li><strong>Bidirectional LSTM layer:</strong> Processes the word sequences, capturing context.</li>
+                    <li><strong>Dense layer 1:</strong> Extracts features.</li>
+                    <li><strong>Dense layer 2:</strong> Extracts further features.</li>
+                    <li><strong>Dense layer 3:</strong> Extracts more features.</li>
+                    <li><strong>Dense layer (output):</strong> Produces toxicity probabilities for the six categories.</li>
+                </ul>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">09 / Training and evaluating the model</p>
+                    <h2>Binary cross-entropy with Adam</h2>
+                </div>
+                <ul class="study-list">
+                    <li>The model was trained using the BinaryCrossentropy loss function and the Adam optimizer.</li>
+                    <li>Its performance was evaluated on a test dataset using precision, recall, and accuracy metrics to assess its effectiveness in classifying toxic comments.</li>
+                </ul>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">10 / Results</p>
+                    <h2>Precision, recall, and accuracy</h2>
+                </div>
+                <ul class="study-list">
+                    <li>Precision: 0.916</li>
+                    <li>Recall: 0.922</li>
+                    <li>Categorical Accuracy: 0.479</li>
+                </ul>
+                <figure class="detail-figure detail-figure--wide">
+                    <img src="assets/img/img/image-9.png" alt="Training and validation loss curves declining together across epochs">
+                </figure>
+                <p>The model performs well on both training and validation data without overfitting.</p>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">11 / Sample output</p>
+                    <h2>Gradio classification interface</h2>
+                </div>
+                <p>The system uses Gradio to provide a user-friendly interface, allowing users to input text and view the classification results seamlessly.</p>
+                <div class="results-grid">
+                    <figure class="detail-figure">
+                        <img src="assets/img/img/image-10.png" alt="Gradio sample classifying a hostile comment as toxic, obscene, insult, and identity hate">
+                    </figure>
+                    <figure class="detail-figure">
+                        <img src="assets/img/img/image-11.png" alt="Gradio sample classifying an insulting comment as toxic, obscene, and insult">
+                    </figure>
+                    <figure class="detail-figure">
+                        <img src="assets/img/img/image-12.png" alt="Gradio sample classifying a threatening comment as toxic and threat">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="details-block">
+                <div class="details-heading">
+                    <p class="eyebrow">12 / Conclusion</p>
+                    <h2>A reliable toxicity classifier</h2>
+                </div>
+                <ul class="study-list">
+                    <li>The gap between training and validation loss is small, suggesting that overfitting is minimal, and the model is well-optimized.</li>
+                    <li>Overall, the model performs reliably in identifying toxic comments, as indicated by the improved performance metrics (Precision: 0.916, Recall: 0.922, Categorical Accuracy: 0.479).</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
