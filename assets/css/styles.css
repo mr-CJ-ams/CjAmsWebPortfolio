@@ -611,9 +611,15 @@ body.dark-theme {
 
 .projects__content{
   display: grid;
-  grid-template-rows: 180px minmax(0, 1fr);
-  justify-content: center;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-content: start;
   min-height: 365px;
+}
+
+.projects__content > div{
+  width: min(100%, 21rem);
 }
 
 .projects__img{
@@ -650,6 +656,47 @@ body.dark-theme {
 
 .projects__button:hover i{
   transform: translateX(.50rem);
+}
+
+.projects__details{
+  margin-top: 1.15rem;
+  text-align: left;
+}
+
+.projects__role{
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  line-height: 1.45;
+}
+
+.projects__period{
+  color: var(--text-color-light);
+  font-size: var(--smaller-font-size);
+  line-height: 1.45;
+  margin-top: .2rem;
+}
+
+.projects__points{
+  display: grid;
+  gap: .7rem;
+  list-style: disc;
+  margin-top: .85rem;
+  padding-left: 1.05rem;
+}
+
+.projects__points li{
+  font-size: var(--small-font-size);
+  line-height: 1.55;
+}
+
+.projects__points li::marker{
+  color: var(--first-color);
+}
+
+.projects__points strong{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
 }
 
 
