@@ -166,6 +166,112 @@ figcaption span { color: var(--accent); font-size: .8rem; }
 
 .role-list li::marker { color: var(--accent); font-weight: 700; }
 
+.documentation-section {
+  border-top: 1px solid var(--line);
+  padding: 4.5rem 0 0;
+}
+
+.documentation-heading,
+.documentation-grid {
+  margin-inline: auto;
+  max-width: 980px;
+}
+
+.documentation-heading h2 { max-width: 760px; }
+
+.documentation-heading p:last-child {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 1.25rem 0 0;
+  max-width: 720px;
+}
+
+.documentation-grid {
+  align-items: start;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.doc-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 .75rem 2rem rgba(22, 43, 53, .06);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.doc-card:hover,
+.doc-card:focus-visible {
+  box-shadow: 0 1.25rem 2.5rem rgba(22, 43, 53, .12);
+  transform: translateY(-4px);
+}
+
+.doc-card:focus-visible {
+  outline: 3px solid rgba(228, 119, 63, .35);
+  outline-offset: 3px;
+}
+
+.doc-card img {
+  background: #edf2ef;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.doc-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  padding: 1rem 1.25rem 1.2rem;
+}
+
+.doc-card__label {
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+  gap: .8rem;
+}
+
+.doc-card__label span {
+  color: var(--accent);
+  font-size: .8rem;
+}
+
+.doc-card__text {
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.doc-card__link {
+  align-items: center;
+  color: var(--accent-dark);
+  display: inline-flex;
+  font-size: .9rem;
+  font-weight: 700;
+  gap: .35rem;
+  margin-top: .25rem;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .project-details {
   border-top: 1px solid var(--line);
   padding-top: 2rem;
@@ -317,6 +423,7 @@ figcaption span { color: var(--accent); font-size: .8rem; }
   .project-details { padding-top: 2rem; }
   .role-section { margin-top: 0; padding: 3rem 0; }
   .details-block { margin-top: 3rem; padding-top: 2rem; }
-  .architecture-grid, .results-grid { grid-template-columns: 1fr; }
+  .architecture-grid, .results-grid, .documentation-grid { grid-template-columns: 1fr; }
+  .documentation-section { padding-top: 3rem; }
   .detail-figure img { padding: .5rem; }
 }
