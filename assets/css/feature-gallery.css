@@ -200,9 +200,10 @@ figcaption span { color: var(--accent); font-size: .8rem; }
   border: 1px solid var(--line);
   border-radius: 1rem;
   color: inherit;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  min-width: 0;
   overflow: hidden;
+  width: 100%;
   box-shadow: 0 .75rem 2rem rgba(22, 43, 53, .06);
   transition: transform .2s, box-shadow .2s;
 }
@@ -222,26 +223,32 @@ figcaption span { color: var(--accent); font-size: .8rem; }
   background: #edf2ef;
   display: block;
   height: auto;
+  max-width: 100%;
   width: 100%;
 }
 
 .doc-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: .55rem;
+  border-top: 1px solid var(--line);
+  display: block;
   padding: 1rem 1.25rem 1.2rem;
 }
 
+.doc-card__label,
+.doc-card__text,
+.doc-card__action {
+  display: block;
+  margin: 0;
+}
+
 .doc-card__label {
-  align-items: center;
-  display: flex;
   font-weight: 700;
-  gap: .8rem;
+  line-height: 1.4;
 }
 
 .doc-card__label span {
   color: var(--accent);
   font-size: .8rem;
+  margin-right: .55rem;
 }
 
 .doc-card__text {
@@ -249,27 +256,20 @@ figcaption span { color: var(--accent); font-size: .8rem; }
   font-size: .95rem;
   font-weight: 500;
   line-height: 1.6;
+  margin-top: .45rem;
 }
 
-.doc-card__link {
-  align-items: center;
+.doc-card__action {
   color: var(--accent-dark);
-  display: inline-flex;
   font-size: .9rem;
   font-weight: 700;
-  gap: .35rem;
-  margin-top: .25rem;
+  margin-top: .75rem;
 }
 
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.doc-card__action i {
+  font-size: 1rem;
+  margin-left: .2rem;
+  vertical-align: -2px;
 }
 
 .project-details {
